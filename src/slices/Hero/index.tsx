@@ -14,7 +14,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
   return (
-    <Bounded>
+    <Bounded className="bg-brand-pink relative h-dvh overflow-hidden text-zinc-800 bg-texture">
       <section
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
