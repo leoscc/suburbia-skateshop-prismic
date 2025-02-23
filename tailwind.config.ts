@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import fluid, { extract } from "fluid-tailwind";
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
 export default {
   content: {
@@ -12,6 +12,8 @@ export default {
     extract,
   },
   theme: {
+    screens,
+    fontSize,
     extend: {
       colors: {
         "brand-blue": "#4876ff",
