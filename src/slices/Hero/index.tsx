@@ -24,11 +24,17 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="bg-brand-pink relative h-dvh overflow-hidden text-zinc-800 bg-texture"
     >
-      <Heading>
-        <PrismicText field={slice.primary.heading} />
-      </Heading>
-      <PrismicRichText field={slice.primary.body} />
-      <PrismicNextLink field={slice.primary.button} />
+      <div className="absolute inset-0 mx-auto mt-24 max-w-6xl px-6 ~py-10/16 grid grid-rows-[1fr, auto] place-items-end">
+        <Heading className="relative max-w-2xl place-self-start">
+          <PrismicText field={slice.primary.heading} />
+        </Heading>
+        <div className="relative w-full flex justify-between items-center ~gap-2/4 flex-col lg:flex-row">
+          <div className="max-w-[45ch] font-semibold ~text-lg/xl">
+            <PrismicRichText field={slice.primary.body} />
+          </div>
+          <PrismicNextLink field={slice.primary.button} />
+        </div>
+      </div>
     </Bounded>
   );
 };
