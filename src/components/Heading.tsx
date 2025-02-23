@@ -8,6 +8,14 @@ type HeadingProps = {
   className?: string;
 };
 
+const sizeClasses = {
+  xl: "~text-4xl/8xl",
+  lg: "~text-4xl/7xl",
+  md: "~text-3xl/5xl",
+  sm: "~text-2xl/4xl",
+  xs: "~text-lg/xl",
+};
+
 export function Heading({
   as: Comp = "h1",
   size = "lg",
@@ -15,17 +23,7 @@ export function Heading({
   children,
 }: HeadingProps) {
   return (
-    <Comp
-      className={clsx(
-        "font-sans uppercase",
-        size === "xl" && "~text-4xl/8xl",
-        size === "lg" && "~text-4xl/7xl",
-        size === "md" && "~text-3xl/5xl",
-        size === "sm" && "~text-2xl/4xl",
-        size === "xs" && "~text-lg/xl",
-        className
-      )}
-    >
+    <Comp className={clsx("font-sans uppercase", sizeClasses[size], className)}>
       {children}
     </Comp>
   );
