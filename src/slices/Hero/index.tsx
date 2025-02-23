@@ -1,8 +1,13 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+  PrismicRichText,
+  PrismicText,
+  SliceComponentProps,
+} from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "@/components/Bounded";
+import { Heading } from "@/components/Heading";
 
 /**
  * Props for `Hero`.
@@ -19,7 +24,9 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
-        <PrismicRichText field={slice.primary.heading} />
+        <Heading>
+          <PrismicText field={slice.primary.heading} />
+        </Heading>
         <PrismicRichText field={slice.primary.body} />
         <PrismicNextLink field={slice.primary.button} />
       </section>
