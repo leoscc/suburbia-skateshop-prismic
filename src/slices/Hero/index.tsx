@@ -19,17 +19,16 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
   return (
-    <Bounded className="bg-brand-pink relative h-dvh overflow-hidden text-zinc-800 bg-texture">
-      <section
-        data-slice-type={slice.slice_type}
-        data-slice-variation={slice.variation}
-      >
-        <Heading>
-          <PrismicText field={slice.primary.heading} />
-        </Heading>
-        <PrismicRichText field={slice.primary.body} />
-        <PrismicNextLink field={slice.primary.button} />
-      </section>
+    <Bounded
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+      className="bg-brand-pink relative h-dvh overflow-hidden text-zinc-800 bg-texture"
+    >
+      <Heading>
+        <PrismicText field={slice.primary.heading} />
+      </Heading>
+      <PrismicRichText field={slice.primary.body} />
+      <PrismicNextLink field={slice.primary.button} />
     </Bounded>
   );
 };
